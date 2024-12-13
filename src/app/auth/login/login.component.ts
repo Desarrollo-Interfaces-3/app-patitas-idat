@@ -26,7 +26,12 @@ export class LoginComponent {
     this.loginViewModel.login(this.usuario, this.password)
     .subscribe({
       next: (response) => {
-        console.log(response)
+        //console.log(response)
+        if(response.rpta){
+          this.router.navigateByUrl("/dashboard")
+        }else{
+          this.mensaje = response.mensaje  
+        }
       },
       error: (err) => {
         this.mensaje = "Ocurrió un error al intentar login"
