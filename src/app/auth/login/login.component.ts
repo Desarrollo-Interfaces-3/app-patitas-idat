@@ -29,6 +29,7 @@ export class LoginComponent {
         //console.log(response)
         if(response.rpta){
           this.router.navigateByUrl("/dashboard")
+          sessionStorage.setItem("login", response.idpersona)
         }else{
           this.mensaje = response.mensaje  
         }

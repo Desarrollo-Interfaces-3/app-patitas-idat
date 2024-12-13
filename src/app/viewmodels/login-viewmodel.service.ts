@@ -26,4 +26,12 @@ export class LoginViewmodelService {
     this.loginStateSubject.next(isLoggedIn)
   }
 
+  logout(){
+    sessionStorage.clear()
+  }
+
+  isLogin(): boolean{
+    return !!sessionStorage.getItem("login")
+  }
+
 }
